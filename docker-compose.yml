@@ -1,11 +1,15 @@
 services:
   drone-flight-tracker:
+    container_name: drone-flight-tracker
     build: .
     ports:
       - '8035:80'
     volumes:
       - data:/var/www/html/data
+      - uploads:/var/www/html/uploads
 
 volumes:
   data:
-    name: droneflights
+    name: droneflights_data
+  uploads:
+    name: droneflights_uploads
